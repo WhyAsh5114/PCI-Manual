@@ -3,20 +3,12 @@
 
 int num_rev(int n)
 {
-    int tn = n;
-    int num_of_digits = 0;
-    while (tn > 0) {
-        tn /= 10;
-        num_of_digits++;
-    }
-
     int rn = 0;
-    for (int i = 0; i < num_of_digits; i++) {
+    while (n > 0) {
         int digit = n % 10;
+        rn = rn * 10 + digit;
         n /= 10;
-        rn += digit * pow(10, num_of_digits-i-1);
     }
-
     return rn;
 }
 
